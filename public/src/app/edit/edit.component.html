@@ -1,0 +1,17 @@
+<p>Update Product</p>
+<div *ngFor="let err of errors">
+    <p style="color:rgb(150, 13, 192);">{{err}}</p>
+</div>
+
+<form *ngIf="editProduct" (submit)="updateProduct()">
+    Name:<input type="text" name="editProduct.name" [(ngModel)]="editProduct.name"><br>
+    Qty:<input type="text" name="editProduct.qty" [(ngModel)]="editProduct.qty"><br>
+    Price:<input type="text" name="editProduct.price" [(ngModel)]="editProduct.price"><br>
+
+    <div *ngIf="editProduct.name.length>=3">
+        <input type="submit" value="UPDATE"><br>
+    </div>
+</form>
+
+
+<button [routerLink]="['/']" routerLinkActive="router-link-active">RESET</button>

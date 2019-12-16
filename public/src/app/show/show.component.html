@@ -1,0 +1,13 @@
+<p>Product Details!</p>
+<h3>Name:</h3>
+<p>{{oneProduct.name}}</p>
+<h3>Qty:</h3>
+<p>{{oneProduct.qty}}</p>
+<h3>Price:</h3>
+<p>{{oneProduct.price}}</p>
+
+<div *ngIf="oneProduct.qty == 0">
+    <button (click)="destroyOneProduct(oneProduct._id)" >DELETE</button>
+</div>
+
+<button [routerLink]="['/']" routerLinkActive="router-link-active">BACK</button>

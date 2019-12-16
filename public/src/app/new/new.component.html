@@ -1,0 +1,16 @@
+<p>New Product</p>
+<div  *ngFor="let err of errors">
+    <p style="color:rgb(150, 13, 192);">{{err}}</p>
+</div>
+
+<form (submit)="createProduct()">
+    Name:<input type="text" name="newProduct.name" [(ngModel)]="newProduct.name"><br>
+    Qty:<input type="text" name="newProduct.qty" [(ngModel)]="newProduct.qty"><br>
+    Price:<input type="text" name="newProduct.price" [(ngModel)]="newProduct.price"><br>
+    <!-- <div *ngIf="(newProduct.name.length>2)"> -->
+    <div *ngIf="(newProduct.name.length>2) && (newProduct.qty>=0) && (newProduct.price>=0)">
+        <input type="submit" value="CREATE"><br>
+    </div>
+    
+</form>
+<button [routerLink]="['/']" routerLinkActive="router-link-active">RESET</button>
